@@ -3,16 +3,19 @@ n = int(input())
 c = int(input())
 m = int(input())
 
-# PROCESSAMENTO:
-sac = int(n/c)
-res = int(n/c)
+dinheiro = n
+preco = c
+promocao = m
 
-while (sac >= m ):
-    #print(sac,res)
-    sag = int(sac/m)
-    res += sag
-    sac -= sag * m
-    sac += sag
+# PROCESSAMENTO:
+embalagens = dinheiro // preco
+chocolates = dinheiro // preco
+
+while (embalagens >= promocao):
+    embalagensGanhas = embalagens // promocao
+    chocolates += embalagensGanhas
+    embalagens -= embalagensGanhas * promocao
+    embalagens += embalagensGanhas
 
 # SAIDA:
-print(res)
+print(chocolates)
