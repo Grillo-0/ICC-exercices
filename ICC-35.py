@@ -1,14 +1,16 @@
 n = int(input())
 
-def divFinder(n):
-    div = [0] * 1000
-    for i in range(n - 1):
-        d = i + 1
-        if n % d == 0:
-            div[i] = d
-    return div
+def isPerfect(n):
+    for i in range(n):
+        cur = 2**(i-1)*(2**i-1)
+        if cur == n:
+            return 1
+            break
+        if cur > n:
+            return 0
+            break
 
-if n == sum(divFinder(n)):
+if isPerfect(n):
     print("S")
 else:
     print("N")
